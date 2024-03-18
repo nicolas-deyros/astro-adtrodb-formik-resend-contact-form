@@ -3,11 +3,18 @@ import { Picture } from 'astro:assets';
 import Layout from '../layouts/index.astro'
 import ContactUs from '../components/Form/ContactUs'
 import myImage from "../assets/me.jpg";
-
+import { db } from 'astro:db';
+import { FormSubmissions } from 'astro:db';
+const contacts = await db.select().from(FormSubmissions)
 ---
 <Layout title='Contact Us'>
 	<div class='flex items-center justify-center'>
-		<Picture src={myImage} formats={['avif', 'webp']} alt="nicolas deyros" />
+		<Picture src={myImage} formats={['avif', 'webp']} alt="nicolas deyros" class={'w-48'}/>
 	</div>
 	<ContactUs client:load/>
+	<!-- {contacts.map((contact) => (
+		<div class='flex flex-col items-center justify-center'>
+			<h2 class='text-2xl font-bold'><span>{contact.fullName}</span>|<span>{contact.email}</span></h2>
+		</div>
+	))} -->
 </Layout>

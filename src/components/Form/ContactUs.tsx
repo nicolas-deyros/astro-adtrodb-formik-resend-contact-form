@@ -23,6 +23,7 @@ const ContactUs = () => {
 					from: 'onboarding@resend.dev',
 					to: `${value.email}`,
 					subject: `Hi, ${value.name}`,
+					fullName: value.name,
 					html: render(<SampleEmail userFirstname={value.name} />, {
 						pretty: true,
 					}),
@@ -37,6 +38,7 @@ const ContactUs = () => {
 			}
 			const data = await res.json()
 			onSubmittingProps.resetForm()
+			location.reload()
 		} catch (error) {
 			console.error(error)
 		}
