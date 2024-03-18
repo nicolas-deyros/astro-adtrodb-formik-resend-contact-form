@@ -8,7 +8,7 @@ export const POST: APIRoute = async ({ params, request }) => {
 	const body = await request.json()
 
 	try {
-		const { to, fullName, from, html, subject, text } = body
+		const { to, name, from, html, subject, text } = body
 		if (!to || !from || !html || !subject || !text) {
 			return new Response(null, {
 				status: 404,
@@ -25,7 +25,7 @@ export const POST: APIRoute = async ({ params, request }) => {
 		})
 
 		const res = await db.insert(FormSubmissions).values({
-			fullName: fullName,
+			fullName: name,
 			email: to,
 		})
 

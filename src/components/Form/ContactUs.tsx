@@ -23,7 +23,7 @@ const ContactUs = () => {
 					from: 'onboarding@resend.dev',
 					to: `${value.email}`,
 					subject: `Hi, ${value.name}`,
-					fullName: value.name,
+					name: value.name,
 					html: render(<SampleEmail userFirstname={value.name} />, {
 						pretty: true,
 					}),
