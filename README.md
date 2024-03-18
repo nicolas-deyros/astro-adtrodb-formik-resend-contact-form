@@ -1,6 +1,10 @@
-# Astro contact form using Formik, Yup, Resend, React Email and Tailwind
+# Astro DB contact form
 
-Base on the video [(FINALLY!) Email for Developers](https://www.youtube.com/watch?v=HyDwVN1AFwY) from the Youtube channel [Coding in Public](https://www.youtube.com/@CodinginPublic)
+Contact form build in Astro, connected to Astro DB and Astro Studio. Using React, Framer Motion, Tailwind, Formik, Yup, Resend and React Email
+
+## Astro DB documentation
+
+Find the Astro DB documentation https://docs.astro.build/en/guides/astro-db
 
 ## Project Structure
 
@@ -44,6 +48,14 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying      |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`  |
 | `npm run astro -- --help` | Get help using the Astro CLI                      |
+
+### Astro Studio
+
+| Command                 | Action                          |
+| :---------------------- | :------------------------------ |
+| `npm run astro login`   | Login to Astro Studio           |
+| `npm run astro link`    | Link project to Astro Studio DB |
+| `npm run astro db push` | Push table schemas              |
 
 ## Dependencies
 
